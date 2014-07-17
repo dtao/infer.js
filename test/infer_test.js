@@ -3,29 +3,13 @@ var infer = require('../infer');
 require('should');
 
 describe('infer', function() {
-  it('produces an AST', function() {
-    infer('var foo = "bar";').should.eql({
-      type: 'Program',
-      body: [
-        {
-          type: 'VariableDeclaration',
-          kind: 'var',
-          declarations: [
-            {
-              type: 'VariableDeclarator',
-              id: {
-                type: 'Identifier',
-                name: 'foo'
-              },
-              init: {
-                type: 'Literal',
-                value: 'bar',
-                raw: '"bar"'
-              }
-            }
-          ]
-        }
-      ]
-    });
+  var program = infer('var foo = "bar";');
+
+  it('produces a Scope object', function() {
+    program.should.be.an.instanceOf(infer.Scope);
+  });
+
+  it('has access to its identifiers', function() {
+    program.getIdentifiers().should.eql(['foo']);
   });
 });
