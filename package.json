@@ -1,0 +1,31 @@
+{
+  "name": "infer.js",
+  "version": "0.1.0",
+  "description": "JavaScript type inference",
+  "main": "infer.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtao/infer.js"
+  },
+  "keywords": [
+    "static",
+    "analysis",
+    "type",
+    "inference"
+  ],
+  "author": "Dan Tao <daniel.tao@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtao/infer.js/issues"
+  },
+  "dependencies": {
+    "esprima": "~1.2.2"
+  },
+  "devDependencies": {
+    "mocha": "~1.20.1",
+    "should": "~4.0.4"
+  }
+}
