@@ -23,6 +23,10 @@ infer.Scope.prototype.getChildScopes = function getChildScopes() {
   return values(this.childScopes);
 };
 
+infer.Scope.prototype.getChildScope = function getChildScope(name) {
+  return this.childScopes[name];
+};
+
 infer.Scope.prototype.addChildScope = function addChildScope(node) {
   this.childScopes[node.id.name] = new infer.Scope(this, node);
 };

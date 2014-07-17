@@ -41,7 +41,7 @@ describe 'infer', ->
 
     it 'provides access to child scopes', ->
       names(result().getChildScopes()).should.eql(['outer'])
-      names(result().getChildScopes()[0].getChildScopes()).should.eql(['inner'])
+      names(result().getChildScope('outer').getChildScopes()).should.eql(['inner'])
 
     it 'child scopes have identifiers', ->
-      result().getChildScopes()[0].getIdentifiers().should.eql(['a', 'b', 'inner', 'bar'])
+      result().getChildScope('outer').getIdentifiers().should.eql(['a', 'b', 'inner', 'bar'])
