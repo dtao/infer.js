@@ -45,3 +45,6 @@ describe 'infer', ->
 
     it 'child scopes have identifiers', ->
       result().getChildScope('outer').getIdentifiers().should.eql(['a', 'b', 'inner', 'bar'])
+
+    it 'the nesting can just keep going', ->
+      result().getChildScope('outer').getChildScope('inner').getIdentifiers().should.eql(['x', 'y', 'foo'])
